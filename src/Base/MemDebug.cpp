@@ -99,7 +99,7 @@ MemDebug cSingelton;
 
 
 #define SET_CRT_DEBUG_FIELD(a) _CrtSetDbgFlag((a) | _CrtSetDbgFlag(_CRTDBG_REPORT_FLAG))
-#define CLEAR_CRT_DEBUG_FIELD(a) _CrtSetDbgFlag(~(a)&_CrtSetDbgFlag(_CRTDBG_REPORT_FLAG))
+#define CLEAR_CRT_DEBUG_FIELD(a) _CrtSetDbgFlag(~(a) & _CrtSetDbgFlag(_CRTDBG_REPORT_FLAG))
 
 FILE* MemDebug::logFile = NULL;
 

@@ -115,7 +115,6 @@ def call_pip(args) -> List[str]:
 
 
 class PythonPackageManager:
-
     """A GUI-based pip interface allowing packages to be updated, either individually or all at
     once."""
 

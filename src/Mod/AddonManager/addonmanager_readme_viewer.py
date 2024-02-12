@@ -36,7 +36,6 @@ translate = fci.translate
 
 
 class ReadmeViewer(QtWidgets.QTextBrowser):
-
     """A QTextBrowser widget that, when given an Addon, downloads the README data as appropriate
     and renders it with whatever technology is available (usually Qt's Markdown renderer for
     workbenches and its HTML renderer for Macros)."""
