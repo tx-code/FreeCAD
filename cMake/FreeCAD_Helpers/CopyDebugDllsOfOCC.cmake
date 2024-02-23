@@ -1,0 +1,8 @@
+macro(CopyDebugDllsOfOCC)
+    if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+        message(STATUS "=======================================")
+        file(GLOB DebugDlls "${FREECAD_LIBPACK_DIR}/bind/*")
+        install(FILES ${DebugDlls} DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+        message(STATUS "Created install commands for INSTALL target (for DebugDllsOfOCC).\n")
+    endif()
+endmacro()

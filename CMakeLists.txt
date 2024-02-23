@@ -102,6 +102,7 @@ CreatePackagingTargets()
 
 if(MSVC AND FREECAD_LIBPACK_USE AND LIBPACK_FOUND)
     CopyLibpackDirectories()
+    CopyDebugDllsOfOCC()
 endif()
 
 if (ENABLE_DEVELOPER_TESTS)

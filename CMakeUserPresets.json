@@ -1,0 +1,78 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 16,
+    "patch": 3
+  },
+  "configurePresets": [
+    {
+      "name": "common-paths",
+      "hidden": true,
+      "cacheVariables": {
+        "FREECAD_LIBPACK_DIR": "E:/Develop/LibPack-0.21-V2.11",
+        "DOXYGEN_EXECUTABLE": "C:/Program Files/doxygen/bin/doxygen.exe",
+        "CMAKE_INSTALL_PREFIX": "E:/Develop/FreeCAD/debug"
+      }
+    },
+    {
+      "name": "ninja",
+      "description": "configure Ninja build",
+      "hidden": true,
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+      },
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "toolset": {
+        "value": "host=x64",
+        "strategy": "external"
+      }
+    },
+    {
+      "name": "custom-debug",
+      "description": "custom debug build for debug build",
+      "hidden": false,
+      "inherits": [
+        "ninja",
+        "common-paths"
+      ],
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BUILD_ADDONMGR": false,
+        "BUILD_ARCH": false,
+        "BUILD_DRAFT": true,
+        "BUILD_DRAWING": false,
+        "BUILD_FEM": false,
+        "BUILD_FEM_NETGEN": false,
+        "BUILD_FORCE_DIRECTORY": true,
+        "BUILD_IDF": false,
+        "BUILD_IMAGE": false,
+        "BUILD_INSPECTION": false,
+        "BUILD_MATERIAL": false,
+        "BUILD_MESH": true,
+        "BUILD_MESH_PART": true,
+        "BUILD_OPENSCAD": false,
+        "BUILD_PART_DESIGN": true,
+        "BUILD_PATH": true,
+        "BUILD_PLOT": false,
+        "BUILD_POINTS": false,
+        "BUILD_RAYTRACING": false,
+        "BUILD_REVERSEENGINEERING": false,
+        "BUILD_ROBOT": true,
+        "BUILD_SHOW": false,
+        "BUILD_SKETCHER": true,
+        "BUILD_SMESH": true,
+        "BUILD_SPREADSHEET": false,
+        "BUILD_START": true,
+        "BUILD_SURFACE": true,
+        "BUILD_TECHDRAW": false,
+        "BUILD_TUX": true
+      }
+    }
+  ]
+}
