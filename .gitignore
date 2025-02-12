@@ -64,3 +64,17 @@ files_to_translate.txt
 # pixi environments
 .pixi
 *.egg-info
+
+# Build and install directories
+/install/
+**/install/
+*.pyc
+__pycache__/
+
+# IDE specific files
+.vscode/
+.idea/
+*.user
+*.suo
+*.sdf
+*.opensdf
