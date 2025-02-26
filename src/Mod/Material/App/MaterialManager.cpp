@@ -38,6 +38,8 @@
 #include "ModelManager.h"
 #include "ModelUuids.h"
 
+#include <Base/Tools.h>
+
 
 using namespace Materials;
 
@@ -132,7 +134,7 @@ bool MaterialManager::isMaterial(const QFileInfo& file) const
         return false;
     }
     // check file extension
-    if (file.suffix() == QString::fromStdString("FCMat")) {
+    if (file.suffix() == QStringLiteral("FCMat")) {
         return true;
     }
     return false;
@@ -174,8 +176,8 @@ std::shared_ptr<App::Material> MaterialManager::defaultAppearance()
 
     long initialTransparency = hGrp->GetInt("DefaultShapeTransparency", 0);
     long initialShininess = hGrp->GetInt("DefaultShapeShininess", 90);
-    mat.shininess = ((float)initialShininess / 100.0F);
-    mat.transparency = ((float)initialTransparency / 100.0F);
+    mat.shininess = Base::fromPercent(initialShininess);
+    mat.transparency = Base::fromPercent(initialTransparency);
 
     return std::make_shared<App::Material>(mat);
 }
